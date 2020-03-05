@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:se/mapspage.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(MyApp());
 
@@ -77,7 +79,9 @@ side: BorderSide(color: Colors.black),
  new Container(
   child:new RaisedButton(
 color: Colors.blue[500],
-onPressed: () => print("Button Pressed"),
+onPressed: () {
+ _showDialog();
+},
 splashColor: Colors.blueGrey,
 child: new Text("Van"),
 padding: EdgeInsets.all(20.0),
@@ -99,4 +103,61 @@ side: BorderSide(color: Colors.black),
   
     
 }
+
+
+ _showDialog() async {
+   String test='4949';
+   TextEditingController _firsttb = new TextEditingController();
+        await showDialog<String>(
+            context: context,
+         builder: (BuildContext context) =>new AlertDialog(
+        contentPadding: const EdgeInsets.all(16.0),
+        content: new Row(
+          children: <Widget>[
+            new Expanded(
+              child: new TextField(
+                controller: _firsttb,
+                autofocus: true,
+                decoration: new InputDecoration(
+                    labelText: 'PIN', hintText: 'Driver pin'),
+              ),
+            )
+          ],
+        ),
+        actions: <Widget>[
+          new FlatButton(
+              child: const Text('Submit'),
+              onPressed: () {
+                if(_firsttb.text==test)
+                {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => MapsPage()
+                              ));
+                // Navigator.pop(context);
+
+                }
+                else{
+                  Navigator.pop(context);
+                Fluttertoast.showToast(
+                      msg: "Wrong pin",
+                      toastLength: Toast.LENGTH_LONG,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIos: 1,
+                      backgroundColor: Colors.blue,
+                     textColor: Colors.black,
+                      fontSize: 16.0);
+                }
+              }),
+          new FlatButton(
+              child: const Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              })
+        ],
+      ),
+        );
+  }
+
 }

@@ -10,7 +10,7 @@ class _MapsPageState extends State<MapsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Map....'), backgroundColor: const Color(0xFFf96327)),
+          title: Text('Mapp...'), backgroundColor: const Color(0xFFf96327)),
     );
   }
 }

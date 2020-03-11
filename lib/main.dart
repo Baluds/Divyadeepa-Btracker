@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:se/mapspage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:se/volmaps.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,7 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     new Container(
                       child: new RaisedButton(
                           color: Colors.blue[500],
-                          onPressed: () => print("Button Pressed"),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        VolmapsPage()));
+                          },
                           splashColor: Colors.blueGrey,
                           child: new Text("Volunteer"),
                           padding: EdgeInsets.all(20.0),

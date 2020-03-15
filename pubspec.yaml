@@ -28,6 +28,7 @@ dependencies:
   firebase_auth:
   google_maps_flutter:
   geolocator:
+  location:
 
 
 dev_dependencies:

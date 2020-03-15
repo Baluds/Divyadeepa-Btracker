@@ -19,8 +19,9 @@ class _VolmapsPageState extends State<VolmapsPage> {
         backgroundColor: Colors.blue[500],
       ),
       body: GoogleMap(
+        myLocationEnabled: true,
         initialCameraPosition: CameraPosition(
-          target: LatLng(45.521563, -122.677433),
+          target: LatLng(12.2958, 76.6394),
           zoom: 11.0,
         ),
         markers: _markers.values.toSet(),
@@ -30,6 +31,7 @@ class _VolmapsPageState extends State<VolmapsPage> {
         tooltip: 'Get Location',
         child: Icon(Icons.flag),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 

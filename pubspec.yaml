@@ -29,6 +29,9 @@ dependencies:
   google_maps_flutter:
   geolocator:
   location:
+  cloud_firestore:
+  geoflutterfire:
+  firebase_core:
 
 
 dev_dependencies:

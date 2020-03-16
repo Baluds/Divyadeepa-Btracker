@@ -103,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             new Expanded(
               child: new TextField(
+                obscureText: true,
                 controller: _firsttb,
                 autofocus: true,
                 decoration: new InputDecoration(
@@ -120,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) => MapsPage()));
-                  // Navigator.pop(context);
+                   //Navigator.pop(context);
 
                 } else {
                   Navigator.pop(context);

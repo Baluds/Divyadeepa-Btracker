@@ -117,12 +117,11 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text('Submit'),
               onPressed: () {
                 if (_firsttb.text == test) {
+                  Navigator.pop(context);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (BuildContext context) => MapsPage()));
-                   //Navigator.pop(context);
-
                 } else {
                   Navigator.pop(context);
                   Fluttertoast.showToast(
@@ -130,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       toastLength: Toast.LENGTH_LONG,
                       gravity: ToastGravity.BOTTOM,
                       timeInSecForIos: 1,
-                      backgroundColor: Colors.blue,
+                      backgroundColor: Colors.blue[300],
                       textColor: Colors.black,
                       fontSize: 16.0);
                 }

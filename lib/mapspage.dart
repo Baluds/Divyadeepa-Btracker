@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-//import 'package:geolocator/geolocator.dart' as e1;
 import 'dart:async';
-//import 'package:location/location.dart';
-//import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MapsPage extends StatefulWidget {
@@ -34,7 +31,6 @@ class _MapsPageState extends State<MapsPage> {
         for (int i = 0; i < docs.documents.length; ++i) {
           gudpeeps.add(docs.documents[i].data);
           initMarker(i, docs.documents[i].data, docs.documents[i].documentID);
-          //print(i);
         }
       }
     });
@@ -56,7 +52,6 @@ class _MapsPageState extends State<MapsPage> {
         visible: true,
       );
       _markers[markerId] = marker;
-      //print(_markers);
     });
   }
 
@@ -121,12 +116,10 @@ class _MapsPageState extends State<MapsPage> {
           zoom: 11.0,
         ),
         markers: Set<Marker>.of(_markers.values),
-        //_markers.values.toSet(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           populategudpeeps();
-          //print(_markers.values);
         },
         tooltip: 'Collect',
         child: Icon(Icons.featured_play_list),
